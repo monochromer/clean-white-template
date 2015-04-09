@@ -1,0 +1,111 @@
+{
+	"title": "Clean White Template",
+	"persons": [
+		{
+			"name": "Name Surname",
+			"post": "Lead Developer",
+			"avatar": "img/team-member-1.jpg",
+			"contacts": [
+				{
+					"contact": "twitter",
+					"link": "twitter"
+				},
+				{
+					"contact": "linkedin",
+					"link": "linkedin"
+				}
+			]
+		},
+		{
+			"name": "Name Surname",
+			"post": "Lead Designer",
+			"avatar": "img/team-member-2.jpg",
+			"contacts": [
+				{
+					"contact": "twitter",
+					"link": "twitter"
+				},
+				{
+					"contact": "linkedin",
+					"link": "linkedin"
+				},
+				{
+					"contact": "dribbble",
+					"link": "dribbble"
+				}
+			]
+		},
+		{
+			"name": "Name Surname",
+			"post": "Marketing Director",
+			"avatar": "img/team-member-3.jpg",
+			"contacts": [
+				{
+					"contact": "skype",
+					"link": "skype"
+				},
+				{
+					"contact": "linkedin",
+					"link": "linkedin"
+				},
+				{
+					"contact": "facebook",
+					"link": "facebook"
+				}
+			]
+		},
+		{
+			"name": "Name Surname",
+			"post": "Business Director",
+			"avatar": "img/team-member-4.jpg",
+			"contacts": [
+				{
+					"contact": "skype",
+					"link": "skype"
+				},
+				{
+					"contact": "linkedin",
+					"link": "linkedin"
+				}
+			]
+		}
+	],
+	"works": [
+		{
+			"name": "Work 1",
+			"image": "img/work1.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		},
+		{
+			"name": "Work 2",
+			"image": "img/work2.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		},
+		{
+			"name": "Work 3",
+			"image": "img/work3.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		},
+		{
+			"name": "Work 4",
+			"image": "img/work4.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		},
+		{
+			"name": "Work 5",
+			"image": "img/work5.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		},
+		{
+			"name": "Work",
+			"image": "img/work6.jpg",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+			"link": "#404"
+		}
+	]
+}

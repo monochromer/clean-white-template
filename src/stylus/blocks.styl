@@ -1,0 +1,508 @@
+html, body
+	height 100%
+
+
+
+
+.input-text
+	border 1px solid #d9d9d9
+	border 1px solid rgba(0,0,0,.15)
+	background-color $color-bg-form
+	transition border-color .15s linear
+
+	&:focus
+		outline none
+		border-color $color-bg-submit
+
+
+
+.page
+	text-align center
+	font set-font-size($base-font-size) $brand-font
+	background-color $color-bg
+	color $color-text
+
+
+
+
+.container
+	margin 0 auto
+	rem(max-width, $width, $base-font-size)
+	rem(padding-left, $gutter/2, $base-font-size)
+	rem(padding-right, $gutter/2, $base-font-size)
+
+
+
+
+.section
+	display block
+	overflow hidden
+	rem(padding-top, 50px, $base-font-size)
+
+	&:nth-child(even)
+		background-color $color-bg-alt
+
+	&__head
+		position relative
+		margin-top 0
+		rem(margin-bottom, 31px, $base-font-size)
+		rem(padding-bottom, 19px, $base-font-size)
+		display inline-block
+		rem(font-size, 30px, $base-font-size)
+		font-weight bold
+		text-transform uppercase
+		color $color-text-head
+
+		&:after
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left -10%
+			right -10%
+			height 3px
+			background-color $color-text-head
+
+	&__description
+		rem(margin, 0 auto 55px, $base-font-size)
+		display block
+		width 60%
+		line-height: 1.625;
+		color: $color-text;
+
+
+
+.logo
+	margin 0
+	padding 0
+	display inline-block
+	width 73px
+	height 19px
+	background transparent url("../img/logo.png") center center
+
+	&__link
+		display block
+		height 100%
+
+
+
+
+.header
+
+	$alpha = .95
+	$screen-breakpoint--big = unit(525/$base-font-size, em)
+	$screen-breakpoint--md = unit(390/$base-font-size, em)
+	$screen-breakpoint--sm = unit(330/$base-font-size, em)
+
+	display block
+	background-color $color-bg
+	background-color rgba(red($color-bg), green($color-bg), blue($color-bg), $alpha);
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+
+	&--pos_fix
+		position fixed
+		z-index 9
+		top 0
+		left 0
+		width 100%
+
+	&__block
+		display inline-block
+		vertical-align middle
+		rem(padding-top, 15px, $base-font-size)
+		rem(padding-bottom, 15px, $base-font-size)
+
+		+media-min($screen-breakpoint--big)
+			rem(padding-top, 41px, $base-font-size)
+			rem(padding-bottom, 42px, $base-font-size)
+
+	&__logo
+		+media-min($screen-breakpoint--big)
+			float left
+
+	&__nav
+		+media-min($screen-breakpoint--big)
+			float right
+
+	&__nav-link
+		rem(margin-left, 10px, $base-font-size)
+		rem(margin-right, 10px, $base-font-size)
+		display inline-block
+		rem(height, 19px, $base-font-size)
+		rem(line-height, 19px, $base-font-size)
+		rem(font-size, 12px, $base-font-size)
+		color $color-link
+		text-decoration none
+		text-transform uppercase
+		transition color .2s linear
+
+		&:hover
+		&:focus
+			color $color-text
+
+		+media-min($screen-breakpoint--sm)
+			margin-bottom 0
+			rem(margin-left, 20px, $base-font-size)
+			rem(margin-right, 20px, $base-font-size)
+
+		+media-min($screen-breakpoint--md)
+			rem(margin-left, 30px, $base-font-size)
+			rem(margin-right, 30px, $base-font-size)
+
+		+media-min($screen-breakpoint--big)
+			rem(margin-left, 50px, $base-font-size)
+			rem(margin-right, 50px, $base-font-size)
+			float left
+
+			&:last-child
+				margin-right 0
+
+
+
+
+.footer
+
+	$screen-breakpoint--bg = unit(980/$base-font-size, em)
+	$screen-breakpoint--md = unit(780/$base-font-size, em)
+	$screen-breakpoint--sm = unit(740/$base-font-size, em)
+
+	display block
+	line-height: 1.5;
+	background-color $color-bg-footer
+
+	&__block
+		margin 0
+		display inline-block
+		vertical-align middle
+		text-transform capitalize
+		color $color-text-footer
+		rem(padding-top, 32px, $base-font-size)
+		rem(padding-bottom, 32px, $base-font-size)
+		
+		&--address
+			rem(margin-right, 16px, $base-font-size)
+
+			+media-min($screen-breakpoint--sm)
+				float left
+
+		&--copy
+			rem(margin-left, 16px, $base-font-size)
+			
+			+media-min($screen-breakpoint--sm)
+				float right
+
+	&__text-alt
+		color $color-text-alt-footer
+
+		&:after
+			content ' '
+
+
+
+.hero
+
+	$screen-breakpoint--bg = unit(790/$base-font-size, em)
+	$screen-breakpoint--md = unit(560/$base-font-size, em)
+	$screen-breakpoint--sm = unit(330/$base-font-size, em)
+
+	min-height 100%
+	width 100%
+	background transparent url("../img/hero-bg.jpg") no-repeat fixed center 0
+	background-size cover
+
+	&__text
+		display inline-block
+		width 100%
+
+		+media-min($screen-breakpoint--bg)
+			width 55%
+
+	&__slogan
+		rem(margin, 167px 0 21px, $base-font-size)
+		rem(font-size, 25px, $base-font-size)
+		line-height 1.25
+		text-transform uppercase
+		font-weight normal
+		color $color-text-head
+
+		+media-min($screen-breakpoint--md)
+			rem(margin-top, 167px + 95px, $base-font-size)
+
+		+media-min($screen-breakpoint--bg)
+			rem(font-size, 40px, $base-font-size)
+
+	&__description
+		rem(margin-bottom, 81px, $base-font-size)
+		brand-font-alt()
+		line-height 1.875
+		font-weight normal
+		font-style italic
+		color $color-text
+
+	&__link-more
+		rem(margin-bottom, 68px, $base-font-size)
+		display inline-block
+		rem(width, 50px, $base-font-size)
+		rem(height, 50px, $base-font-size)
+		rem(line-height, 50px, $base-font-size)
+		text-align center
+		border-radius 50%
+		background-color $color-bg
+		box-shadow 0px 2px 4px rgba(0,0,0,.2), 0px 0px 0px 15px rgba(255,255,255,.5)
+		color $color-link
+		transition color .2s linear
+
+		&:hover
+		&:focus
+			color $color-text
+
+
+
+
+$gallery-pad = 30px
+$gallery-screen-breakpoint--bg = unit(980/$base-font-size, em)
+$gallery-screen-breakpoint--md = unit(780/$base-font-size, em)
+$gallery-screen-breakpoint--sm = unit(490/$base-font-size, em)
+
+.works-gallery
+
+	rem(margin-left, -($gallery-pad), $base-font-size)
+	rem(margin-right, -($gallery-pad), $base-font-size)
+
+	&__item
+		rem(margin-bottom, 2*$gallery-pad, $base-font-size)
+		box-sizing border-box
+		rem(padding, 0 $gallery-pad, $base-font-size)
+		float left
+		width 100%
+		+media-min($gallery-screen-breakpoint--sm)
+			width: unit(1/2*100%,'%')
+		+media-min($gallery-screen-breakpoint--md)
+			width: unit(1/3*100%,'%')
+
+
+.work
+	margin 0
+	display block
+	position relative
+	padding-top: unit(200/268*100, '%');
+	width 100%
+	overflow hidden
+	cursor pointer
+
+	&__image
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+
+	&__info
+		box-sizing border-box
+		rem(padding, 14px, $base-font-size)
+		position absolute
+		left 0
+		top 100%
+		width 100%
+		height 100%
+		overflow-x hidden
+		color $color-link
+		background-color: $color-text-head
+		background-color: rgba( red($color-text-head), green($color-text-head), blue($color-text-head), .85)
+		opacity 0
+		transition .45s
+
+	&__name
+		rem(margin, 0 0 14px, $base-font-size)
+		display block
+		rem(padding-bottom, 14px, $base-font-size)
+		// width 90%
+		margin-left auto
+		margin-right auto
+		rem(font-size, 14px, $base-font-size)
+		font-weight normal
+		border-bottom 1px solid
+
+	&__desc
+		rem(margin, 0 0 14px, $base-font-size)
+		padding 0
+		rem(font-size, 13px, $base-font-size)
+
+	&__link
+		rem(font-size, 14px, $base-font-size)
+		color inherit
+		text-decoration none
+
+		&:hover
+		&:focus
+			text-shadow 0 0 5px
+			
+	&:hover &__info
+		opacity 1
+		top 0%
+
+
+$team-pad = 10px;
+$team-screen-breakpoint--bg = unit(980/$base-font-size, em);
+$team-screen-breakpoint--md = unit(790/$base-font-size, em);
+$team-screen-breakpoint--sm = unit(450/$base-font-size, em);
+
+.team-members
+
+	rem(margin-left, -($team-pad), $base-font-size)
+	rem(margin-right, -($team-pad), $base-font-size)
+	rem(margin-bottom, 60px, $base-font-size)
+
+	&__item
+		rem(margin-bottom, 2*$team-pad, $base-font-size)
+		box-sizing border-box
+		float left
+		width 100%
+		rem(padding, 0 $team-pad, $base-font-size)
+		+media-min($team-screen-breakpoint--sm)
+			width 50%
+		+media-min($team-screen-breakpoint--md)
+			width 25%
+
+
+.team-member
+	rem(padding, 2*$team-pad 0, $base-font-size)
+	background-color: $color-bg
+	box-shadow 0 2px 4px rgba(0,0,0,.2)
+
+	&__avatar
+		rem(margin, 0 auto 15px, $base-font-size)
+		position relative
+		z-index 1
+		overflow hidden
+		rem(width, 80px, $base-font-size)
+		rem(height, 80px, $base-font-size)
+		border-radius 50%
+		border 3px solid $color-bg
+		box-shadow 0 2px 6px rgba(0,0,0,.75)
+		
+		& img
+			position relative
+			z-index 0
+			border-radius 50%
+
+	&__name
+		rem(margin, 0 0 10px, $base-font-size)
+		rem(font-size, 16px, $base-font-size)
+		text-transform uppercase
+		font-weight bold
+		color $color-text-head
+
+	&__post
+		rem(margin, 0 0 19px, $base-font-size)
+		rem(font-size, 12px, $base-font-size)
+		brand-font-alt()
+		font-style italic
+		font-weight normal
+		text-transform capitalize
+
+	// &__contacts
+
+	&__contact
+		rem(margin, 0 $team-pad, $base-font-size)
+		display inline-block
+		vertical-align middle
+		color $color-link
+		transition color .2s linear
+
+		&:hover
+		&:focus
+			color $color-text
+
+
+.contact
+
+	$screen-breakpoint--sm = unit(580/$base-font-size, em)
+	$screen-breakpoint--md = unit(850/$base-font-size, em)
+	$pad = 20px
+
+	rem(margin-left, -($pad), $base-font-size)
+	rem(margin-right, -($pad), $base-font-size)
+
+	&__head
+		rem(margin, 0 0 25px, $base-font-size)
+		text-align: left;
+		font-weight normal
+		rem(font-size, 16px,  $base-font-size)
+		color: $color-text;
+
+	&__col
+		rem(margin-bottom, 73px, $base-font-size)
+		box-sizing border-box
+		rem(padding, 0 $pad, $base-font-size)
+
+	&__map
+		+media-min($screen-breakpoint--md)
+			width 40%
+			float left
+
+	&__map-canvas
+		margin 0
+		padding 0
+		rem(min-height, 320px, $base-font-size)
+		overflow hidden
+		border: 6px solid $color-bg
+		box-shadow 0 2px 5px rgba(0,0,0,.25)
+
+
+	&__form
+		rem(font-size, 14px, $base-font-size)
+		+media-min($screen-breakpoint--md)
+			width 60%
+			float right
+
+	&__input
+		rem(margin-bottom, 23px, $base-font-size)
+		box-sizing border-box
+		width 100%
+		brand-font-alt()
+		font-style italic
+		color $color-text
+		// brand-font-alt()
+
+	&__message
+		rem(padding, 30px, $base-font-size)
+		rem(min-height, 247px, $base-font-size)
+		resize vertical
+
+	&__mail
+		rem(padding, 20px, $base-font-size)
+		rem(height, 60px, $base-font-size)
+		rem(line-height, 60px, $base-font-size)
+		+media-min($screen-breakpoint--sm)
+			width 57%
+			float left
+
+	&__submit
+		rem(margin-bottom, 23px, $base-font-size)
+		box-sizing border-box
+		display inline-block
+		vertical-align middle
+		width 100%
+		rem(height, 60px, $base-font-size)
+		rem(line-height, 60px, $base-font-size)
+		text-align center
+		text-transform uppercase
+		font-family $brand-font
+		border none
+		color $color-bg
+		background-color: $color-bg-submit;
+		box-shadow: 0 0 0 2px $color-bg, 0 2px 10px rgba(0,0,0,.25)
+		cursor pointer
+		transition background-color .2s linear
+		+media-min($screen-breakpoint--sm)
+			width 37%
+			float right
+
+		&:hover
+			background-color: #90b0bf
+
+		& .fa
+			position relative
+			vertical-align middle
+			rem(left, -20px, $base-font-size)

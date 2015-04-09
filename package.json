@@ -1,0 +1,20 @@
+{
+  "name": "cleanwhite",
+  "version": "1.0.0",
+  "description": "html-css template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "monochromer",
+  "devDependencies": {
+    "browser-sync": "^2.4.0",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-jade": "^1.0.0",
+    "gulp-stylus": "^2.0.1",
+    "gulp-util": "^3.0.4",
+    "jade": "^1.9.2",
+    "stylus": "^0.50.0"
+  }
+}

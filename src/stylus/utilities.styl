@@ -1,0 +1,77 @@
+// functions, mixins and helper classes
+
+
+// set base font size in percent
+set-font-size($px) {
+	return 100% * $px / 16;
+}
+
+// function for strip measure units
+strip-units( val ) {
+	unit( val, "" )
+}
+
+// rem mixin
+// original sass implementation
+// http://codepen.io/HugoGiraudel/pen/xsKdH?editors=010
+rem($property, $values, $base-font-size) {
+	$px = ();
+	$rem = ();
+
+	for $value in $values {
+		if ($value == 0 or $value == auto) {
+			push($px, $value);
+			push($rem, $value);
+		} else {
+			$unit = unit($value);
+			$val = strip-units($value);
+//			if ($unit == "px") {
+//				push($px,  $value);
+//				push($rem, ($val / $base-font-size * 1rem));
+//			}
+			if ($unit == "rem") {
+				push($px,  ($val * $base-font-size * 1px));
+				push($rem, $value);
+			} else {
+				push($px,  $value);
+				push($rem, ($val / $base-font-size * 1rem));
+			}
+		}
+	}
+
+	{$property}: $px;
+	{$property}: $rem;
+}
+
+
+brand-font()
+	font-family: $brand-font;
+
+
+brand-font-alt()
+	font-family: $brand-font-alt;
+
+
+
+media-min($num)
+	@media only screen and (min-width: $num)
+		{block}
+
+
+
+// clearfix
+.u-cf
+	&:before
+	&:after
+		content: '';
+		display: table;
+
+	&:after
+		clear: both;
+
+
+// image replacement technique
+.u-ir
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;

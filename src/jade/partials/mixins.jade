@@ -1,0 +1,43 @@
+//- mixin for IE conditional comment
+mixin ie(condition)
+	| <!--[!{condition}]>
+	block
+	| <![endif]-->
+
+
+
+
+//- mixin for creating section
+mixin section(id, headtext, bodytext)
+	section.section(id=id)
+		.container
+			h2.section__head(class="scroll-anim scroll-anim--offset_left")= headtext
+			p.section__description(class="scroll-anim scroll-anim--offset_right")= bodytext
+			block
+
+
+
+
+//- mixin for creating team member card
+mixin person(name, post, avatar, contacts)
+	.team-member
+		.team-member__avatar.u-ir
+			img(src="#{avatar}", alt=name)
+		h2.team-member__name= name
+		h3.team-member__post= post
+		.team-member__contacts
+			each val in contacts
+				a.team-member__contact(href=val.link)
+					i.fa(class="fa-#{val.contact}")
+
+
+
+
+//- mixin for creating portfolio work card
+mixin work(name, image, text, link)
+	figure.work
+		img.work__image(src="#{image}", alt=name)
+		figcaption.work__info
+			h2.work__name= name
+			p.work__desc= text
+			a.work__link(href="#{link}") View

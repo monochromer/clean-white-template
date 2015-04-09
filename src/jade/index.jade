@@ -1,0 +1,98 @@
+include ./partials/mixins.jade
+
+doctype html
+html.page
+
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet", href="css/main.css")
+
+		+ie("if lt IE 9")
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+			<script>document.documentElement.className += " " + "ltie9"</script>
+
+		title= title
+	body
+
+		// header - logo and nav
+		header.header.header--pos_fix
+			.container.u-cf
+				.header__block.header__logo.u-ir
+					h1.logo
+						a.logo__link(href="/") Company Name
+				.header__block.header__nav.u-cf
+					a.header__nav-link(href="#works") work
+					a.header__nav-link(href="#team") team
+					a.header__nav-link(href="#contacts") contact
+		//end header - logo and nav
+
+
+		// hero section
+		section.hero
+			.container
+				.hero__text
+					h2.hero__slogan let us make your lives easier
+					h3.hero__description We specialize in crafting awesome ideas for web, mobile and beyond.
+					a.hero__link-more(href="#works")
+						i.fa.fa-chevron-down
+		// end hero section
+
+
+		// portfolio section
+		+section("works", "featured work", "Here you can find some of our latest works, to see the details of these works just click the thumbnails below.")
+			.works-gallery.u-cf
+				- var animClass = "";
+				each work, index in works
+					- animClass = (index % 2 === 0) ? ("scroll-anim scroll-anim--offset_left") : ("scroll-anim scroll-anim--offset_right");
+					.works-gallery__item(class="#{animClass}")
+						+work(work.name, work.image, work.text, work.link)
+		// end portfolio section
+
+		// team section
+		+section("team", "team", "We are a hard working group, who's aim is to listen to your problems and to come up with the best solution possible. We follow the lates trends on the web to create custom talierd niche websites.")
+			.team-members.u-cf
+				- var animClass = "", len = persons.length;
+				each person, index in persons
+					- animClass = (index < Math.round(len/2)) ? ("scroll-anim scroll-anim--offset_left") : ("scroll-anim scroll-anim--offset_right");
+					.team-members__item(class="#{animClass}")
+						+person(person.name, person.post, person.avatar, person.contacts)
+		// end team section
+
+
+		// contact section
+		+section("contacts", "contact", "Where are we located?")
+			.contact.u-cf
+				.contact__col.contact__map.scroll-anim.scroll-anim--offset_left
+					h2.contact__head Where are we located?
+					.contact__map-canvas(id="map")
+						img(src="img/map.jpg", alt="")
+				.contact__col.contact__form.scroll-anim.scroll-anim--offset_right
+					h2.contact__head Want to contact us now? Just drop us a line below.
+					form.u-cf(action="", method="post")
+						textarea.input-text.contact__input.contact__message(name="message", placeholder="Leave us a message...")
+						input.input-text.contact__input.contact__mail(name="email", type="email", placeholder="your-email@example.com")
+						button.contact__submit(type="submit")
+							i.fa.fa-send.fa-2x
+							| send
+		// end contact section
+
+
+		// footer
+		footer.footer
+			.container.u-cf
+				p.footer__block.footer__block--address
+					span.footer__text-alt Address:
+					| Ahmet Bayman Caddesi No:8, Seyrantepe - Istanbul
+				.footer__block.footer__block--copy
+					| Copyright &copy; 2013 Limbo
+		// end footer
+
+
+		// scripts section
+		script(src="js/jquery-1.11.1.min.js")
+		script(src="https://maps.googleapis.com/maps/api/js?v=3.exp")
+		script(src="js/scripts.js")
+		// end scripts section
